@@ -1,0 +1,37 @@
+main{
+    
+    width: 80%;
+}
+.contato{
+    background-color: white;
+    border-radius: 20px;
+}
+.contato ul{
+    list-style-type:none ;
+    width: fit-content;
+}
+.contato table tr th{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contato table tr th a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.contato table tr th a:hover{
+    text-decoration: underline;
+    
+}
+.contato img{
+    width: 390px;
+    border-radius: 20px;
+    height: 500px;
+}
+.contato h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

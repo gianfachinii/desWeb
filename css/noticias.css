@@ -1,0 +1,170 @@
+main {
+    display: grid;
+    grid-template-areas: "n1 n2"
+                         "n3 n4"
+                         "n5 n6"
+    ;
+    grid-template-columns: 5fr  5fr;
+    /* podem ser usados 10 fragmentos   */
+    grid-template-rows: 30vh 30vh 30vh ;
+    /*vh= view height(altura)*/
+}
+
+
+
+ .notic1 {
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    grid-area: n1;
+    border-radius: 30px;
+}
+
+ .notic1 span {
+    display: block;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+ .notic1 img {
+    width: 300px;
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+ .notic2 {
+    grid-area: n2;
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    border-radius: 30px;
+    
+}
+ .notic2 span {
+    display: block;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+ .notic2 img {
+    width: 300px;
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+ .notic3 {
+    grid-area: n3;
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    margin-top: 100px;
+    border-radius: 30px;
+}
+ .notic3 span {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+ .notic3 img {
+    width: 300px;
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+ .notic4 {
+    grid-area: n5;
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    margin-top: 200px;
+    border-radius: 30px;
+}
+ .notic4 span {
+    display: block;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+ .notic4 img {
+    width: 300px;
+    height: 200px;
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+ .notic5 {
+    grid-area: n6;
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    margin-top: 200px;
+
+    border-radius: 30px;
+}
+ .notic5 span {
+    display: block;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+ .notic5 img {
+    width: 300px;
+    height: 200px;
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+ .notic6 {
+    grid-area: n4;
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    margin-top: 100px;
+    border-radius: 30px;
+}
+ .notic6 span {
+    display: block;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 18px;
+    
+}
+
+ .notic6 img {
+    width: 300px;
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+main a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button{
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 90px;
+    margin-right: 90px;
+    height: 40px;
+    border-radius: 50px;
+    
+}
+button:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
