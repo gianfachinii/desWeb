@@ -12,6 +12,74 @@
     <link rel="stylesheet" href="css/historia.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/sidebar.css">
+
+    <style>
+         .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Ocupa toda a largura disponível */
+            max-width: 800px; /* Define um tamanho máximo para o carrossel */
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Estilo das imagens no carrossel */
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* A imagem cobre o contêiner sem distorcer */
+        }
+
+        /* Botões de navegação */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Círculos de navegação (indicadores) */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 3px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Exibe a primeira imagem ao carregar a página */
+        .carousel-slide:first-child {
+            display: block;
+        }
+    </style>
 </head>
 
 <body class="inicial">
@@ -68,7 +136,23 @@
         <p>Aproximadamente duas décadas depois, o Parque São Jorge ficou pequeno demais para a torcida, então a diretoria  decidiu sediar seus jogos no tradicional Estádio Municipal Paulo Machado de Carvalho, mais conhecido como Pacaembu, onde o clube teve grandes momentos e títulos. </p>
         <h2>Neo Química Arena(2014)</h2>
         <p>Após grandes momentos no Pacaembu, enfim chegou o momento de adquirir uma casa própria que seja à altura de sua torcida, então, em 2010, no ano do centenário, o clube anuncia o início da construção do famoso "Itaquerão", que ficaria pronto 4 anos depois, sendo um dos estádios sede da Copa do Mundo de 2014, e palco do Corinthians e do Bando de Loucos até hoje. </p>
-        <img src="img/historia/fiel.jpg" alt="" class="imgtorcida">
+        <div class="carousel-container">
+            <!-- Imagens do Carrossel -->
+            <img class="carousel-slide" src="img/historia/fiel.jpg" alt="Imagem 1">
+            <img class="carousel-slide" src="img/historia/neo-quimica-arena-1.jpg" alt="Imagem 2">
+            <img class="carousel-slide" src="img/historia/neo-quimicaestadio.webp" alt="Imagem 3">
+            
+            <!-- Botões de Navegação -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+        <!-- Dots para navegação -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
         <h1>Títulos</h1>
         <h2>Campeonato Paulista:</h2>
         <p>O Corinthians é o maior campeão paulista da história, com 30 títulos conquistados durante seus 113 anos de idade. Seu último título foi o tri-campeonato consecutivo, durante os anos de 2017-2019.</p>
@@ -103,6 +187,46 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
+
+        
+    </script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+    
+        // Função para mudar o slide
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        // Exibe o slide atual
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        // Mostra os slides
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+    
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+    
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+    
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+    
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    
+        // Muda automaticamente a cada 3 segundos
+        setInterval(() => { changeSlide(1); }, 3000);
     </script>
 </body>
 
