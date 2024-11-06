@@ -1,0 +1,50 @@
+main{
+   margin-top: 25px;
+    text-align: center;
+   width: 90%;
+}
+
+.notic{
+    background-color: white;
+    padding: 20px;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 30px;
+}
+.notic h1{
+    font-size: 45px;
+}
+.notic h2{
+    font-size: 30px;
+}
+.notic img{
+    width: 665px;
+    display: inline-block;
+    height: 443px;   
+}
+.notic p{
+    font-size: 20px;
+    text-align: center;
+}
+.notic span{
+    background-color: rgb(172, 166, 166);
+    width: 350px;
+    display: block;
+    padding: 10px;
+    border: solid 3px gray;
+    margin-left: 35%;
+}
+.notic a img{
+    width: 30px;
+    vertical-align: middle;
+    height: 25px;
+}
+.notic a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    line-height: 30px;
+    
+}
+.notic a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,105 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+
+    width: 100%;
+    display: grid;
+    grid-template-areas: "h h h"
+                         "n m m"
+                         "n m m";
+    grid-template-columns: 1.7fr 7fr;
+    /* podem ser usados 10 fragmentos   */
+    grid-template-rows: 15vh 20vh 20vh 20vh 20vh;
+    /*vh= view height(altura)*/
+
+}
+
+header {
+    grid-area: h;
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: fixed;
+    
+
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header ul li:first-of-type {
+    width: 100px;
+}
+
+header ul li img {
+    width: 100%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+header ul li h1 {
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    align-content: center;
+    margin-top: 6%;
+}
+
+header ul li:last-child {
+    width: fit-content;
+    margin: 0px;
+    float: right;
+    margin-left: 20%;
+    font-size: 20px;
+}
+
+nav {
+
+    grid-area: n;
+    position: fixed;
+    top: 15%;
+
+}
+
+nav table {
+    width: 200px;
+    background-color: white;
+
+}
+
+nav tr:hover {
+    background-color: #d3d3d3;
+}
+
+nav tr {
+    height: 130px;
+
+}
+
+nav table tr td {
+
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-top: black solid 1px;
+    align-content: center;
+    text-decoration: none;
+
+}
+
+nav table tr td a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+}
+
+main {
+    grid-area: m;
+}

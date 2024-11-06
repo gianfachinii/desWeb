@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Central de Transferências</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ctransf.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/sidebar.css">
+</head>
+
+<body class="ctransf">
+    <header>
+        <ul>
+            <li><img src="img/logo-corinthians.png" alt=""></li>
+            <li>
+                <h1>MUNDO TIMÃO <br>S.C.C.P</h1>
+            </li>
+            <li>
+                <h2>Principais notícias sobre o Time do Povo!</h2>
+            </li>
+
+
+        </ul>
+
+
+
+
+
+    </header>
+    <nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Página Inicial</a>
+            <a href="ctransf.html">Central de Transferências</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="proxjogo.html">Próximos Jogos</a>
+            <a href="historia.html">História</a>
+            <a href="contato.html">Contato</a>
+        </div> 
+        <span style="font-size:35px;cursor:pointer; color:white;" onclick="openNav()">&#9776; Menu</span>
+    </nav>
+    
+    <main>
+      
+        <table>
+            <h1>Chegando...</h1>
+            <tr>
+                <th>Atleta</th>
+                <th>Idade</th>
+                <th>Clube anterior</th>
+                <th>Valor</th>
+
+            </tr>
+            <tr>
+                <td> <img src="img/ctransf/bidu.jpg" alt=""> <br>Matheus Bidú </td>
+                <td>23 anos</td>
+                <td>Cruzeiro(emprestado pelo Guarani) <br><img src="img/ctransf/cruz.png" alt="" style="width:60px;">
+                </td>
+                <td>R$:1,5 Milhão</td>
+            </tr>
+
+            <tr>
+                <td><img src="img/ctransf/romero.jpg" alt=""> <br>Ángel Romero</td>
+                <td>30 anos</td>
+                <td>Cruz Azul <br> <img src="img/ctransf/cruzazul.png" alt="" style="width:70px;"></td>
+                <td>R$:0 (Chega por fim de contrato)</td>
+            </tr>
+
+            <tr>
+                <td><img src="img/ctransf/yuri.webp" alt=""> <br>Yuri Alberto</td>
+                <td>21 anos</td>
+                <td>Zenit <br> <img src="img/ctransf/zenit.png" alt="" style="width:60px;"></td>
+                <td>R$:0 (Negociação apenas envolvendo jogadores)</td>
+            </tr>
+
+        </table>
+        <table>
+            <h1>De saída!</h1>
+            <tr>
+                <th>Atleta</th>
+                <th>Idade</th>
+                <th>Destino</th>
+                <th>Valor</th>
+
+            </tr>
+
+            <tr>
+                <td><img src="img/ctransf/piton.webp" alt=""> <br>Lucas Piton</td>
+                <td>22 anos</td>
+                <td>Vasco da Gama <br> <img src="img/ctransf/vasco.svg" alt="" style="width:60px;"> </td>
+                <td>€:3 milhões; Aprox. R$:16 milhões</td>
+            </tr>
+            <tr>
+                <td><img src="img/ctransf/ramiro.jpg" alt=""> <br>Ramiro</td>
+                <td>29 anos</td>
+                <td>Cruzeiro <br> <img src="img/ctransf/cruz.png" alt="" style="width:60px;"></td>
+                <td>R$:0 (Saiu por fim de contrato).</td>
+            </tr>
+            <tr>
+                <td><img src="img/ctransf/raulgustavo.webp" alt="" style="width:60px;"> <br>Raul Gustavo</td>
+                <td>23 anos</td>
+                <td>Bahia <br> <img src="img/ctransf/ECBahia.png" alt="" style="width:60px;"></td>
+                <td>R$:0 (Empréstimo)</td>
+            </tr>
+            <tr>
+                <td><img src="img/ctransf/vital.webp" alt=""> <br>Mateus Vital</td>
+                <td>24 anos</td>
+                <td>Cruzeiro <br> <img src="img/ctransf/cruz.png" style="width:60px;"></td>
+                <td>€:2,5 milhões; Aprox. R$:13 milhões </td>
+            </tr>
+            </tr>
+            <tr>
+                <td><img src="img/ctransf/mdavo.png" alt=""> <br>Matheus Davó</td>
+                <td>23 anos</td>
+                <td>Bahia <br> <img src="img/ctransf/ECBahia.png" alt="" style="width:60px;"></td>
+                <td>R$ 3,5 milhões </td>
+            </tr>
+            <tr>
+                <td><img src="img/ctransf/rrenan.webp" alt=""> <br>Robert Renan</td>
+                <td>19 anos</td>
+                <td>Zenit <br> <img src="img/ctransf/zenit.png" alt="" style="width:60px;"></td>
+                <td style="color: blue; font-weight: bold; background-color: lightgray; padding: 10px;">
+                    R$ 0 (Envolvido na negociação de Yuri Alberto)
+                </td> <!-- Utilização do CSS inline  -->
+
+
+                
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "20%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+
+</html>

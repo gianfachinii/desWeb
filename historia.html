@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/historia.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <style>
+        /* Sidenav */
+        .sidenav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            z-index: 9999; 
+            transition: 0.5s;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10; /* Para garantir que o header fique acima do conteúdo */
+            background-color: #000;
+            color: white;
+            padding: 10px 0;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header ul li {
+            list-style: none;
+        }
+
+        /* Carrossel */
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 100px auto 0; /* Distância do carrossel para o header fixo */
+            position: relative;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 3px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Exibe a primeira imagem ao carregar a página */
+        .carousel-slide:first-child {
+            display: block;
+        }
+
+        /* Ajusta o espaçamento superior para o conteúdo da página */
+        body {
+            padding-top: 120px; /* Distância para compensar o header fixo */
+        }
+    </style>
+</head>
+
+<body class="inicial">
+    <header>
+        <ul>
+            <li><img src="img/logo-corinthians.png" alt=""></li>
+            <li>
+                <h1>MUNDO TIMÃO <br>S.C.C.P</h1>
+            </li>
+            <li>
+                <h2>Principais notícias sobre o Time do Povo!</h2>
+            </li>
+        </ul>
+    </header>
+
+    <nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Página Inicial</a>
+            <a href="ctransf.html">Central de Transferências</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="proxjogo.html">Próximos Jogos</a>
+            <a href="historia.html">História</a>
+            <a href="contato.html">Contato</a>
+        </div> 
+        <span style="font-size:35px;cursor:pointer; color:white;" onclick="openNav()">&#9776; Menu</span>
+    </nav>
+
+    <main>
+        <div class="historia">   
+            <h1>História do clube:</h1>
+            <p>Em meados de 1910, mais aproximadamente no dia 1º de setembro, um grupo de trabalhadores e operários do bairro Bom Retiro, São Paulo, decidiram fundar o Sport Club Corinthians Paulista, se inspirando na equipe inglesa Corinthian-Casuals Football Club, que estavam de passagem pela cidade na época...</p>
+
+            <img src="img/historia/primeirotime.jpg" alt="">
+            <img src="img/historia/primeirotime2.0.jpeg" alt="">
+
+            <p>De 1910 para cá, o clube conquistou diversos títulos...</p>
+
+            <!-- Carrossel de Imagens -->
+            <div class="carousel-container">
+                <img class="carousel-slide" src="img/historia/fiel.jpg" alt="Imagem 1">
+                <img class="carousel-slide" src="img/historia/neo-quimica-arena-1.jpg" alt="Imagem 2">
+                <img class="carousel-slide" src="img/historia/neo-quimicaestadio.webp" alt="Imagem 3">
+                
+                <!-- Navegação por setas -->
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+
+            <!-- Pontos para navegação -->
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <h1 style="font-style: italic;">Títulos</h1>
+            <h2>Campeonato Paulista:</h2>
+            <p>O Corinthians é o maior campeão paulista da história...</p>
+            <img src="img/historia/paulistao1.webp" alt="">
+            <img src="img/historia/paulistao2.jpg" alt="">
+
+            <!-- Outros títulos e imagens -->
+            <h2>Campeonato Brasileiro</h2>
+            <p>Com 7 títulos conquistados, o Corinthians é um dos maiores campeões...</p>
+            <img src="img/historia/brasileirao1.webp" alt="">
+            <img src="img/historia/brasileirao2.jpg" alt="">
+
+            <h2>Copa do Brasil</h2>
+            <p>Um campeonato onde o Timão tem boas atuações...</p>
+            <img src="img/historia/cdb1.jpg" alt="">
+            <img src="img/historia/cdb2.png" alt="">
+
+            <h2>Mundial de Clubes</h2>
+            <p>Com dois títulos, o Corinthians é o maior campeão...</p>
+            <img src="img/historia/mundial1.png" alt="">
+            <img src="img/historia/mundial2.jpg" alt="">
+
+            <h2>Libertadores da América</h2>
+            <p>Mesmo com apenas um título, a campanha do Timão na edição do campeonato de 2012...</p>
+            <img src="img/historia/libertadores2.jpg" alt="">
+            <img src="img/historia/libertadores1.jpg" alt="">
+        </div>
+    </main>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "20%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(() => { changeSlide(1); }, 3000);
+    </script>
+</body>
+
+</html>
