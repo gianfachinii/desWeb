@@ -5,13 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contatos</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contato.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/sidebar.css">
+    <style>/* Estilos gerais */
+       /* Estilos para a área de contato */
+.contato {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo do formulário */
+form {
+    background-color: #111; /* Cinza escuro */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels */
+form label {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ddd; /* Texto cinza claro */
+    text-align: left;
+    width: 100%; /* Alinha o label à esquerda dentro do formulário */
+    max-width: 250px;
+}
+
+/* Campos de entrada */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #333; /* Fundo cinza médio */
+    color: #fff; /* Texto branco */
+    border: 1px solid #444; /* Borda cinza */
+    border-radius: 4px;
+}
+
+/* Botão de envio */
+form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff; /* Fundo branco */
+    color: #000; /* Texto preto */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+form button:hover {
+    background-color: #444; /* Fundo cinza escuro ao passar o mouse */
+    color: #fff; /* Texto branco */
+}
+
+       
+        </style>
 </head>
 
 <body class="inicial">
@@ -24,14 +88,7 @@
             <li>
                 <h2>Principais notícias sobre o Time do Povo!</h2>
             </li>
-
-
         </ul>
-
-
-
-
-
     </header>
     <nav>
         <div id="mySidenav" class="sidenav">
@@ -42,31 +99,38 @@
             <a href="proxjogo.html">Próximos Jogos</a>
             <a href="historia.html">História</a>
             <a href="contato.html">Contato</a>
-        </div> 
+            <a href="quiz.html">Quiz</a>
+        </div>
         <span style="font-size:35px;cursor:pointer; color:white;" onclick="openNav()">&#9776; Menu</span>
     </nav>
     <main>
         <div class="contato">
-            <h1>Criador:Gian Paulo Fachini</h1>
+            <h1>Criador: Gian Paulo Fachini</h1>
             <table>
                 <tr>
-                    <th>WhatsApp:(41)98750-8955 </th>
-                    <th><a href="https://instagram.com/gianfachinii" target="_blank">
-                    Instagram:@gianfachini</th></a></th>
-
+                    <th>WhatsApp: (41)98750-8955 </th>
+                    <th><a href="https://instagram.com/gianfachinii" target="_blank">Instagram: @gianfachini</a></th>
                 </tr>
                 <tr>
                     <td><img src="img/qrcodewpp.jfif" alt=""></td>
                     <td><a href="https://instagram.com/gianfachinii" target="_blank"><img src="img/gianfachini_qr (2).png" alt=""></a></td>
-                    <td><img src="img/qrcode-twitter.png" alt="" style="width: 400px; height: 400px;"></td>  <!-- Utilização do css inline      !-->
-                    
-                    
+                    <td><img src="img/qrcode-twitter.png" alt="" style="width: 400px; height: 400px;"></td>
                 </tr>
             </table>
+            <!-- Formulário de Contato -->
+            <h2>Entre em Contato</h2>
+            <form action="enviar_formulario.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
+                <label for="sugestao">Sua Sugestão:</label>
+                <textarea id="sugestao" name="sugestao" rows="4" required></textarea>
 
-
-            
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </main>
     <script>

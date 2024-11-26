@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Página Inicial</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -27,9 +25,6 @@
         </ul>
     </header>
 
-    <!-- Contador regressivo até 8 de dezembro -->
-   
-
     <nav>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -39,6 +34,7 @@
             <a href="proxjogo.html">Próximos Jogos</a>
             <a href="historia.html">História</a>
             <a href="contato.html">Contato</a>
+            <a href="quiz.html">Quiz</a>
         </div> 
         <span style="font-size:35px;cursor:pointer; color:white;" onclick="openNav()">&#9776; Menu</span>
     </nav>
@@ -46,7 +42,8 @@
     <main>
         <div class="paginicial">
             <h1>Aqui você encontra as últimas notícias do Timão! </h1>
-            <div id="countdown" style="text-align: center; font-size: 20px; color: black; margin-top: 10px;"></div> <!-- Utilização do CSS inline e contador utilizando o Javascript-->
+            <div id="countdown" style="text-align: center; font-size: 20px; color: black; margin-top: 10px;"></div>
+
             <h1>Classificação:</h1>
             <h2>Campeonato Paulista</h2>
 
@@ -124,16 +121,17 @@
                         <td>
                             <ul>
                                 <li>1<img src="img/main/saopaulo.png" alt="">São Paulo</li>
-                                <li>2<img src="img/main/corinthians.png" alt=""> x Corinthians</li>
+                                <li>2<img src="img/main/corinthians.png" alt=""> Corinthians</li>
                             </ul>
                         </td>
                     </tr>
-                </div>
-            </table>
+                </table>
+            </div>
 
+            <!-- Tabela de Artilharia -->
             <h2>Estatísticas dos jogadores</h2>
             <h3>Artilharia e assistências</h3>
-            <table class="artilheiro">
+            <table class="artilheiro" id="artilheiroTable">
                 <tr>
                     <th>Atleta</th>
                     <th>Gols Marcados</th>
@@ -142,7 +140,7 @@
                 <tr>
                     <td><img src="img/main/rogermain.webp" alt=""> Róger Guedes</td>
                     <td>3 gols</td>
-                    <td>1 assistências</td>
+                    <td>1 assistência</td>
                 </tr>
                 <tr>
                     <td><img src="img/main/adson.jpeg" alt="">Adson</td>
@@ -165,10 +163,32 @@
                     <td>1 assistência</td>
                 </tr>
             </table>
+
+            <!-- Botão e formulário para adicionar novo jogador -->
+            <button onclick="toggleForm()" style="margin-top: 20px; cursor: pointer;">Editar Artilharia</button>
+
+            <div id="formContainer" style="display: none; margin-top: 10px;">
+                <h3>Adicionar/Editar Jogador</h3>
+                <form id="playerForm" onsubmit="addOrUpdatePlayer(event)">
+                    <label for="playerName">Nome do Jogador:</label>
+                    <input type="text" id="playerName" required>
+
+                    <label for="playerGoals">Gols Marcados:</label>
+                    <input type="number" id="playerGoals" required>
+
+                    <label for="playerAssists">Assistências:</label>
+                    <input type="number" id="playerAssists" required>
+
+                    <label for="playerImage">URL da Imagem:</label>
+                    <input type="url" id="playerImage" required>
+
+                    <button type="submit" style="margin-top: 10px;">Salvar</button>
+                </form>
+            </div>
         </div>
     </main>
 
-    <!-- Script do contador regressivo -->
+    <!-- Scripts para o contador e o menu lateral -->
     <script>
         const targetDate = new Date("December 8, 2024 00:00:00").getTime();
 
@@ -184,6 +204,7 @@
             document.getElementById("countdown").innerHTML = `Faltam ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos para o fim do Brasileirão Betano 2024!`;
 
             if (timeLeft < 0) {
+
                 clearInterval(countdownInterval);
                 document.getElementById("countdown").innerHTML = "A data chegou!";
             }
@@ -199,6 +220,49 @@
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- JavaScript para gerenciar a edição de artilharia -->
+    <script>
+        function toggleForm() {
+            const formContainer = document.getElementById("formContainer");
+            formContainer.style.display = formContainer.style.display === "none" ? "block" : "none";
+        }
+
+        function addOrUpdatePlayer(event) {
+            event.preventDefault();
+
+            const playerName = document.getElementById("playerName").value;
+            const playerGoals = document.getElementById("playerGoals").value;
+            const playerAssists = document.getElementById("playerAssists").value;
+            const playerImage = document.getElementById("playerImage").value;
+
+            const table = document.getElementById("artilheiroTable");
+
+            // Procura jogador na tabela para atualizar
+            let playerRow = Array.from(table.rows).find(row => row.cells[0]?.innerText.includes(playerName));
+
+            // Se o jogador já existe, atualiza a linha; se não, cria nova linha
+            if (playerRow) {
+                playerRow.cells[0].innerHTML = `<img src="${playerImage}" alt=""> ${playerName}`;
+                playerRow.cells[1].innerText = `${playerGoals} gols`;
+                playerRow.cells[2].innerText = `${playerAssists} assistências`;
+            } else {
+                // Cria nova linha para o jogador
+                const newRow = table.insertRow();
+                const cellName = newRow.insertCell(0);
+                const cellGoals = newRow.insertCell(1);
+                const cellAssists = newRow.insertCell(2);
+
+                cellName.innerHTML = `<img src="${playerImage}" alt=""> ${playerName}`;
+                cellGoals.innerText = `${playerGoals} gols`;
+                cellAssists.innerText = `${playerAssists} assistências`;
+            }
+
+            // Limpa o formulário e esconde
+            document.getElementById("playerForm").reset();
+            toggleForm();
         }
     </script>
 </body>
